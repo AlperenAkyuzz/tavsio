@@ -48,6 +48,7 @@ Start Date:  8/August/19
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
 
+
 /*===============
 ***General Styling
 ===============*/
@@ -1509,6 +1510,7 @@ header.sticky {
 }
 
 .new-postbox {
+    margin-top: 1rem;
     display: inline-block;
     width: 100%;
 }
@@ -1544,7 +1546,6 @@ header.sticky {
     font-weight: 500;
     font-size: 15px;
     line-height: 15px;
-    margin-bottom: 5px;
     padding-bottom: 12px;
     text-transform: capitalize;
     width: 100%;
@@ -1980,6 +1981,7 @@ a.learnmore:hover{
     float: right;
     text-align: center;
     width: 32%;
+    margin-top: 1rem;
 }
 .we-video-info > ul li:last-child {
     margin-right: 0;
@@ -5307,6 +5309,7 @@ canvas {
 	transform: translateX(-100%);
     width: 240px;
 	transition:  transform 0.5s cubic-bezier(0.55, 0, 0.1, 1) 0s, -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+    border-radius: 0 1.5rem;
 }
 .left-menu-full > ul {
     display: inline-block;
@@ -17746,16 +17749,16 @@ nav .main-btn{margin-left: 20px;}
     color: #333;
 }
 .transparent .nav-list{
-	background: #6563ff;
+	background: #0f0f3a;
 }
 .transparent .nav-list > li ul {
-    background: #9090e0 none repeat scroll 0 0;
+    background: #0f0f3a none repeat scroll 0 0;
 }
 .transparent .nav-list > li ul > li > a:hover{
-	background: #6563ff;
+	background: #0f0f3a;
 }
 .transparent .nav-list > li:hover{
-	background: #9090e0;
+	background: #0f0f3a;
 }
 
 .top-area > ul > li > a::before {
@@ -18519,4 +18522,44 @@ table.adition tbody tr td {
 }
 .modal{
 	z-index: 999999;
+}
+
+/** Custom CSS **/
+.btn-link {
+    color: #fa6342;
+}
+.btn-link:hover {
+    color: #f65634;
+    text-decoration: none;
+}
+
+.post-tab {
+    display: inline-block;
+    list-style: outside none none;
+    margin-bottom: 0;
+    padding: 0 20px 20px;
+    width: 100%;
+}
+
+/** Colors **/
+.color-orange {
+    color: #fa6342;
+}
+.color-pumpkin {
+    color: #d35400;
+}
+.color-red {
+    color: #cf150e;
+}
+.color-blue {
+    color: #133e85
+}
+.color-alizarin {
+    color: #e74c3c
+}
+.color-green-sea {
+    color: #16a085;
+}
+.color-midnight-blue {
+    color: #2c3e50;
 }

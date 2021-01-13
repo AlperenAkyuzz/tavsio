@@ -8,13 +8,11 @@
                 <div class="more">
                     <div class="more-post-optns"><i class="ti-more-alt"></i>
                         <ul>
-                            <li><i class="fa fa-pencil-square-o"></i>Edit Post</li>
-                            <li><i class="fa fa-trash-o"></i>Delete Post</li>
-                            <li class="bad-report"><i class="fa fa-flag"></i>Report Post</li>
-                            <li><i class="fa fa-address-card-o"></i>Boost This Post</li>
-                            <li><i class="fa fa-clock-o"></i>Schedule Post</li>
-                            <li><i class="fa fa-wpexplorer"></i>Select as featured</li>
-                            <li><i class="fa fa-bell-slash-o"></i>Turn off Notifications</li>
+                            <li><i class="fa fa-pencil-square-o"></i>Düzenle</li>
+                            <li><i class="fa fa-trash-o"></i>Sil</li>
+                            <li class="bad-report"><i class="fa fa-flag"></i>Kötüye Kullanım Bildir</li>
+                            <li><i class="fa fa-bell-o"></i>Bildirimleri Aç</li>
+                            <li><i class="fa fa-bell-slash-o"></i>Bildirimleri Kapat</li>
                         </ul>
                     </div>
                 </div>
@@ -44,28 +42,28 @@
                 <div class="we-video-info">
                     <ul>
                         <li>
-																<span class="views" title="views">
-																	<i class="fa fa-eye"></i>
-																	<ins>1.2k</ins>
-																</span>
+                            <span class="views" title="views">
+                                <i class="fa fa-eye"></i>
+                                <ins>1.2k</ins>
+                            </span>
                         </li>
                         <li>
                             <div class="likes heart" title="Like/Dislike">❤ <span>2K</span></div>
                         </li>
                         <li>
-																<span class="comment" title="Comments">
-																	<i class="fa fa-commenting"></i>
-																	<ins>52</ins>
-																</span>
+                            <span class="comment" title="Comments">
+                                <i class="fa fa-commenting"></i>
+                                <ins>52</ins>
+                            </span>
                         </li>
 
                         <li>
-																<span>
-																	<a class="share-pst" href="#" title="Share">
-																		<i class="fa fa-share-alt"></i>
-																	</a>
-																	<ins>20</ins>
-																</span>
+                            <span>
+                                <a class="share-pst" href="#" title="Share">
+                                    <i class="fa fa-share-alt"></i>
+                                </a>
+                                <ins>20</ins>
+                            </span>
                         </li>
                     </ul>
                     <div class="users-thumb-list">

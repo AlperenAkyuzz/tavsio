@@ -8,7 +8,7 @@
     <div class="top-area">
         <div class="main-menu">
 				<span>
-			    	<i><img src="{{ asset('frontend/images/svg/apps.svg') }}" alt=""></i>
+			    	<i> <i class="fa fa-cubes"></i></i>
 			    </span>
         </div>
         <div class="top-search">
@@ -18,13 +18,13 @@
             </form>
         </div>
         <div class="page-name">
-            <span>Newsfeed</span>
+            <span>@yield('title')</span>
         </div>
         <ul class="setting-area">
-            <li><a href="newsfeed.html" title="Home" data-ripple=""><img src="{{ asset('frontend/images/svg/home.svg') }}" alt=""></a></li>
+            <li><a href="newsfeed.html" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
             <li>
                 <a href="" title="Friend Requests" data-ripple="">
-                    <img src="{{ asset('frontend/images/svg/user.png') }}" alt=""><em class="bg-red">5</em>
+                    <i class="fa fa-user"></i><em class="bg-red">5</em>
                 </a>
                 <div class="dropdowns">
                     <span>5 New Requests <a href="#" title="">View all Requests</a></span>
@@ -115,7 +115,7 @@
             </li>
             <li>
                 <a href="#" title="Notification" data-ripple="">
-                    <img src="{{ asset('frontend/images/svg/bell.svg') }}" title="" alt=""><em class="bg-purple">7</em>
+                    <i class="fa fa-bell"></i><em class="bg-purple">7</em>
                 </a>
                 <div class="dropdowns">
                     <span>4 New Notifications <a href="#" title="">Mark all as read</a></span>
@@ -199,7 +199,7 @@
                     <a href="notifications.html" title="" class="more-mesg">View All</a>
                 </div>
             </li>
-            <li><a href="#" title="Help" data-ripple=""><img src="{{ asset('frontend/images/svg/question.svg') }}" alt=""></a>
+            <li><a href="#" title="Help" data-ripple=""> <i class="fa fa-question"></i></a>
                 <div class="dropdowns helps">
                     <span>Quick Help</span>
                     <form method="post">
@@ -222,19 +222,11 @@
             <img src="{{ asset('frontend/images/resources/admin.jpg') }}" alt="">
             <span class="status f-online"></span>
             <div class="user-setting">
-                <span class="seting-title">Chat setting <a href="#" title="">see all</a></span>
-                <ul class="chat-setting">
-                    <li><a href="#" title=""><span class="status f-online"></span>online</a></li>
-                    <li><a href="#" title=""><span class="status f-away"></span>away</a></li>
-                    <li><a href="#" title=""><span class="status f-off"></span>offline</a></li>
-                </ul>
-                <span class="seting-title">User setting <a href="#" title="">see all</a></span>
                 <ul class="log-out">
-                    <li><a href="about.html" title=""><i class="ti-user"></i> view profile</a></li>
-                    <li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
-                    <li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
-                    <li><a href="setting.html" title=""><i class="ti-settings"></i>account setting</a></li>
-                    <li><a href="logout.html" title=""><i class="ti-power-off"></i>log out</a></li>
+                    <li><a href="about.html" title=""><i class="ti-user"></i> Profili görüntüle</a></li>
+                    <li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>Profili düzenle</a></li>
+                    <li><a href="setting.html" title=""><i class="ti-settings"></i>Hesap ayarları</a></li>
+                    <li><a href="logout.html" title=""><i class="ti-power-off"></i>Çıkış yap</a></li>
                 </ul>
             </div>
         </div>

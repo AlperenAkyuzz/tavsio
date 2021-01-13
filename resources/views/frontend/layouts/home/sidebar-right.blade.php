@@ -118,95 +118,6 @@
             </div>
         </div><!-- explore events -->
         <div class="widget">
-            <h4 class="widget-title">Faved This Page</h4>
-            <ul class="faved-page">
-                <li>
-                    <a href="#" title="Sophie" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="John" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar2.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Amy" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar3.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Maria" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar4.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Lucy" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar5.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="sanjana" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar6.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Jack" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar7.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="user" src="images/resources/friend-avatar8.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Sarah" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar9.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Tomy" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar10.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Adam" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar11.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="sadie" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar12.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="vikash" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar13.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Musa" data-toggle="tooltip">
-                        <img alt="user" src="images/resources/friend-avatar14.jpg">
-                    </a>
-                </li>
-                <li class="all-faved">
-                    <a href="#">+20k</a>
-                </li>
-            </ul>
-        </div><!-- Faved this page -->
-        <div class="widget">
-            <div class="banner high-opacity purple">
-                <div class="bg-image" style="background-image: url(images/resources/baner-widgetbg2.jpg)"></div>
-                <div class="post-job">
-                    <img src="images/job-icon.png" alt="">
-                    <span>Post a new job</span>
-                    <p>Create a new job post for hire a new talented from the pitnik</p>
-                    <a class="main-btn" href="#" title="">Post Job</a>
-                </div>
-            </div>
-        </div><!-- create new job -->
-        <div class="widget">
             <h4 class="widget-title">#Tags:</h4>
             <div class="pit-tags">
                 <a href="#" title="">News</a>
@@ -218,21 +129,6 @@
                 <a href="#" title="">Fashion</a>
             </div>
         </div><!-- tags -->
-        <div class="widget">
-            <div class="post-creat">
-                <div class="bg-feature">
-                    <img src="images/resources/post-createbg.jpg" alt="">
-                    <span>Create</span>
-                </div>
-                <div class="create-meta">
-                    <img src="images/logo2.png" alt="">
-                    <p>
-                        The Best Post on Pitnik for you, Pulled from the most active communities on Pitnik. Check here to see the most shared, upvoted, and commented content on the internet.
-                    </p>
-                    <a class="main-btn2" href="#" title="">Create Post</a>
-                </div>
-            </div>
-        </div><!-- create post pitred -->
         <div class="widget pitnik-links stick-widget">
             <ul>
                 <li><a href="#" title="">about</a></li>
