@@ -1,224 +1,53 @@
 <div class="topbar transparent stick">
     <div class="logo">
-        <a title="" href="newsfeed.html"><img src="{{ asset('frontend/images/logo2.png') }}" alt=""></a>
-        <a class="menu-small blue-bg" href="#" title="">
+        <a title="" href="newsfeed.html"><img src="{{ asset('frontend/images/logo_main.png') }}" alt="Tavsio Logo" width="120px;"></a>
+        <!--<a class="menu-small blue-bg" href="#" title="">
             <i class="fa fa-bars fa-2x ml-4"></i>
-        </a>
+        </a>-->
     </div>
     <div class="top-area">
         <div class="main-menu">
-				<span>
-			    	<i> <i class="fa fa-cubes"></i></i>
-			    </span>
+            <span>
+                <a href="#" title="Help" data-ripple=""> <i class="fa fa-question"></i></a>
+            </span>
+            <div class="dropdowns helps">
+                <span>Quick Help</span>
+                <form method="post">
+                    <input type="text" placeholder="How can we help you?">
+                </form>
+                <span>Help with this page</span>
+                <ul class="help-drop">
+                    <li><a href="forum.html" title=""><i class="fa fa-book"></i>Community & Forum</a></li>
+                    <li><a href="faq.html" title=""><i class="fa fa-question-circle-o"></i>FAQs</a></li>
+                    <li><a href="career.html" title=""><i class="fa fa-building-o"></i>Carrers</a></li>
+                    <li><a href="privacy.html" title=""><i class="fa fa-pencil-square-o"></i>Terms & Policy</a></li>
+                    <li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
+                    <li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>
+                </ul>
+            </div>
         </div>
+
+        <ul class="header-links-area">
+            <li class="new-button-li"><a href="" title="Yeni Gönderi"><i class="fa fa-plus-circle color-red"></i></a></li>
+        </ul>
+
         <div class="top-search">
             <form method="post" class="">
                 <input type="text" placeholder="Ürün, İnceleme, #etiket vb. arayınız..">
                 <button data-ripple><i class="fa fa-search"></i></button>
             </form>
         </div>
+        <ul class="header-links-area">
+            <li><a href="{{ url('/') }}" title="Home"><i class="fa fa-home"></i></a></li>
+        </ul>
         <div class="page-name">
             <span>@yield('title')</span>
         </div>
-        <ul class="setting-area">
-            <li><a href="newsfeed.html" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
-            <li>
-                <a href="" title="Friend Requests" data-ripple="">
-                    <i class="fa fa-user"></i><em class="bg-red">5</em>
-                </a>
-                <div class="dropdowns">
-                    <span>5 New Requests <a href="#" title="">View all Requests</a></span>
-                    <ul class="drops-menu">
-                        <li>
-                            <div>
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-2.jpg') }}" alt="">
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6><a href="#" title="">Loren</a></h6>
-                                    <span><b>Amy</b> is mutule friend</span>
-                                    <i>yesterday</i>
-                                </div>
-                                <div class="add-del-friends">
-                                    <a href="#" title=""><i class="fa fa-heart"></i></a>
-                                    <a href="#" title=""><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-3.jpg') }}" alt="">
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6><a href="#" title="">Tina Trump</a></h6>
-                                    <span><b>Simson</b> is mutule friend</span>
-                                    <i>2 days ago</i>
-                                </div>
-                                <div class="add-del-friends">
-                                    <a href="#" title=""><i class="fa fa-heart"></i></a>
-                                    <a href="#" title=""><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-4.jpg') }}" alt="">
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6><a href="#" title="">Andrew</a></h6>
-                                    <span><b>Bikra</b> is mutule friend</span>
-                                    <i>4 hours ago</i>
-                                </div>
-                                <div class="add-del-friends">
-                                    <a href="#" title=""><i class="fa fa-heart"></i></a>
-                                    <a href="#" title=""><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-5.jpg') }}" alt="">
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6><a href="#" title="">Dasha</a></h6>
-                                    <span><b>Sarah</b> is mutule friend</span>
-                                    <i>9 hours ago</i>
-                                </div>
-                                <div class="add-del-friends">
-                                    <a href="#" title=""><i class="fa fa-heart"></i></a>
-                                    <a href="#" title=""><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-1.jpg') }}" alt="">
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6><a href="#" title="">Emily</a></h6>
-                                    <span><b>Amy</b> is mutule friend</span>
-                                    <i>4 hours ago</i>
-                                </div>
-                                <div class="add-del-friends">
-                                    <a href="#" title=""><i class="fa fa-heart"></i></a>
-                                    <a href="#" title=""><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="friend-requests.html" title="" class="more-mesg">View All</a>
-                </div>
-            </li>
-            <li>
-                <a href="#" title="Notification" data-ripple="">
-                    <i class="fa fa-bell"></i><em class="bg-purple">7</em>
-                </a>
-                <div class="dropdowns">
-                    <span>4 New Notifications <a href="#" title="">Mark all as read</a></span>
-                    <ul class="drops-menu">
-                        <li>
-                            <a href="notifications.html" title="">
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-1.jpg') }}" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6>sarah Loren</h6>
-                                    <span>commented on your new profile status</span>
-                                    <i>2 min ago</i>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notifications.html" title="">
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-2.jpg') }}" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6>Jhon doe</h6>
-                                    <span>Nicholas Grissom just became friends. Write on his wall.</span>
-                                    <i>4 hours ago</i>
-                                    <figure>
-                                        <span>Today is Marina Valentine’s Birthday! wish for celebrating</span>
-                                        <img src="{{ asset('frontend/images/birthday.png') }}" alt="">
-                                    </figure>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notifications.html" title="">
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-3.jpg') }}" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6>Andrew</h6>
-                                    <span>commented on your photo.</span>
-                                    <i>Sunday</i>
-                                    <figure>
-                                        <span>"Celebrity looks Beautiful in that outfit! We should see each"</span>
-                                        <img src="{{ asset('frontend/images/resources/admin.jpg') }}" alt="">
-                                    </figure>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notifications.html" title="">
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-4.jpg') }}" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6>Tom cruse</h6>
-                                    <span>nvited you to attend to his event Goo in</span>
-                                    <i>May 19</i>
-                                </div>
-                            </a>
-                            <span class="tag">New</span>
-                        </li>
-                        <li>
-                            <a href="notifications.html" title="">
-                                <figure>
-                                    <img src="{{ asset('frontend/images/resources/thumb-5.jpg') }}" alt="">
-                                    <span class="status f-online"></span>
-                                </figure>
-                                <div class="mesg-meta">
-                                    <h6>Amy</h6>
-                                    <span>Andrew Changed his profile picture. </span>
-                                    <i>dec 18</i>
-                                </div>
-                            </a>
-                            <span class="tag">New</span>
-                        </li>
-                    </ul>
-                    <a href="notifications.html" title="" class="more-mesg">View All</a>
-                </div>
-            </li>
-            <li><a href="#" title="Help" data-ripple=""> <i class="fa fa-question"></i></a>
-                <div class="dropdowns helps">
-                    <span>Quick Help</span>
-                    <form method="post">
-                        <input type="text" placeholder="How can we help you?">
-                    </form>
-                    <span>Help with this page</span>
-                    <ul class="help-drop">
-                        <li><a href="forum.html" title=""><i class="fa fa-book"></i>Community & Forum</a></li>
-                        <li><a href="faq.html" title=""><i class="fa fa-question-circle-o"></i>FAQs</a></li>
-                        <li><a href="career.html" title=""><i class="fa fa-building-o"></i>Carrers</a></li>
-                        <li><a href="privacy.html" title=""><i class="fa fa-pencil-square-o"></i>Terms & Policy</a></li>
-                        <li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
-                        <li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+        <div class="header-links-ext">
+            <span><a href="{{ url('forum') }}"><i class="fa fa-lightbulb-o"></i> Tavsiye İste</a></span>
+        </div>
         <div class="user-img">
-            <h5>Jack Carter</h5>
+            <h5>Auth User</h5>
             <img src="{{ asset('frontend/images/resources/admin.jpg') }}" alt="">
             <span class="status f-online"></span>
             <div class="user-setting">
@@ -230,7 +59,6 @@
                 </ul>
             </div>
         </div>
-        <span class="fa fa-gears main-menu" data-ripple=""></span>
     </div>
     <nav>
         <ul class="nav-list">

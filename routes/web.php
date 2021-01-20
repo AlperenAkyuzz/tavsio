@@ -124,3 +124,26 @@ Route::group(['prefix' => 'tavsiocms', 'middleware' => 'admin'], function () {
  *  Frontend Routes
  */
 Route::get('/', 'Frontend\DashboardController@index')->name('index');
+
+/**
+ * User Routes
+ */
+Route::get('/giris', 'Frontend\User\LoginController@index')->name('login');
+Route::post('/login', 'Frontend\User\LoginController@login_process');
+Route::get('/hesabim', 'Frontend\User\MyProfileController@index')->middleware('auth')->name('profile');
+Route::get('/hesabim/duzenle', 'Frontend\User\MyProfileController@edit')->middleware('auth')->name('profileEdit');
+/*
+Route::get('/register', function () {
+    $insert = [
+        'uuid'            => \Webpatser\Uuid\Uuid::generate()->string,
+        'typeid'          => 1,
+        'username'        => 'alperenakyuz',
+        'firstname'       =>"Alperen",
+        'lastname'        => "Akyüz",
+        'email'           => "alperenakyuz@yandex.com",
+        'password'        => bcrypt("serv1693")
+    ];
+    $userInsertId = DB::table('users')->insertGetId($insert);
+});*/
+
+Route::get('{slug}', 'Frontend\RedirectController@index');

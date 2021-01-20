@@ -6,6 +6,9 @@
     $profile_link = "alperenakyuz";
     $post_type = "Video Tavsiye";
     $post_date = "20 Ocak 2021 Pazartesi 10:50";
+    $bookmark = "false";
+    $notify = "on";
+
 @endphp
 @section('post-meta')
     <figure>

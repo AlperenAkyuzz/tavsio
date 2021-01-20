@@ -1,3 +1,9 @@
+<div class="central-meta add-post-box">
+    <div class="add-post-button">
+        <a href="javascript:void(0)"><i class="fa fa-plus-circle"></i> Tavsiye veya yorumunu paylaş</a>
+    </div>
+</div>
+{{--
 <div class="central-meta postbox">
     <!--
     <div class="row">
@@ -8,11 +14,8 @@
             <span class="create-post"><button class="btn btn-link">Yeni Bir Yorum</button></span>
         </div>
     </div>-->
-    <span class="create-post">Oluştur</span>
-    <ul class="nav nav-tabs trend post-tab">
-        <li class="nav-item"><a class="active" href="#advice" data-toggle="tab">Tavsiye</a></li>
-        <li class="nav-item"><a class="" href="#comment" data-toggle="tab">Yorum</a></li>
-    </ul>
+    <span class="create-post">Yeni Gönderi</span>
+
 
     <div class="tab-content">
         <div class="tab-pane fade active show" id="advice">
@@ -139,3 +142,4 @@
         </div>
     </div>-->
 </div><!-- add post new box -->
+--}}

@@ -5,66 +5,101 @@
                 <img src="{{ asset($author_image) }}" alt=""> <!-- Post Author Image -->
             </figure>
             <div class="friend-name">
-                <div class="more">
-                    <div class="more-post-optns"><i class="ti-more-alt"></i>
-                        <ul>
-                            <li><i class="fa fa-pencil-square-o"></i>Düzenle</li>
-                            <li><i class="fa fa-trash-o"></i>Sil</li>
-                            <li class="bad-report"><i class="fa fa-flag"></i>Kötüye Kullanım Bildir</li>
-                            <li><i class="fa fa-bell-o"></i>Bildirimleri Aç</li>
-                            <li><i class="fa fa-bell-slash-o"></i>Bildirimleri Kapat</li>
-                        </ul>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12 post-info">
+                        <ins><a href="{{ $profile_link }}" title="">{{ $author }}</a><span class="post-type advice-brush"> {{ $post_type }}</span></ins>
+                        <span class="post-date"><a href="detay"><i class="fa fa-globe"></i> {{ $post_date }}</a> </span>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="more">
+                            {{-- @if($post->type == \App\Tavsio\Tavsio::POST_COMMENT) --}}
+                            <!--
+                            <ol class="pit-rate">
+                                <li class="rated"><i class="fa fa-star"></i></li>
+                                <li class="rated"><i class="fa fa-star"></i></li>
+                                <li class="rated"><i class="fa fa-star"></i></li>
+                                <li class="rated"><i class="fa fa-star"></i></li>
+                                <li class=""><i class="fa fa-star"></i></li>
+                                <li><span>4.7/5</span></li>
+                            </ol>
+                            -->
+                                {{-- @endif --}}
+                                <span class="label label-default">New</span></h1>
+                            <div class="more-post-optns"><i class="fa fa-ellipsis-h"></i>
+                                <ul>
+                                    {{--
+                                    @if(Auth::id() === $post->user_id)
+                                        <li><i class="fa fa-pencil-square-o"></i>Düzenle</li>
+                                        <li><i class="fa fa-trash-o"></i>Sil</li>
+                                    @endif --}}
+                                    <li><i class="fa fa-pencil-square-o"></i>Düzenle</li>
+                                    <li><i class="fa fa-trash-o"></i>Sil</li>
+                                    {{--
+                                    @if(Auth::id() !== $post->user_id)
+                                        <li class="bad-report"><i class="fa fa-flag"></i>Kötüye Kullanım Bildir</li>
+                                    @endif --}}
+                                    <li class="bad-report"><i class="fa fa-flag"></i>Kötüye Kullanım Bildir</li>
+                                    @if($notify == 'on')
+                                        <li><i class="fa fa-bell-slash-o"></i>Bildirimleri Kapat</li>
+                                    @else
+                                        <li><i class="fa fa-bell-o"></i>Bildirimleri Aç</li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <ins><a href="{{ $profile_link }}" title="">{{ $author }}</a> {{ $post_type }}</ins>
-                <span><i class="fa fa-globe"></i> {{ $post_date }} </span>
+
             </div>
             <div class="post-meta">
                 @yield('post-meta')
                 <div class="we-video-info">
                     <ul>
                         <li>
-                            <span class="views" title="views">
+                            <span class="views" title="Görüntülenme" data-toggle="tooltip">
                                 <i class="fa fa-eye"></i>
                                 <ins>1.2k</ins> <!-- Comment Count -->
                             </span>
                         </li>
                         <li>
-                            <span class="comment" title="Comments">
+                            <span class="comment" title="Beğen" data-toggle="tooltip">
                                 <i class="fa fa-thumbs-up"></i>
                                 <ins>52</ins> <!-- Like Count -->
                             </span>
                         </li>
                         <li>
-                            <span class="comment" title="Comments">
-                                <i class="fa fa-thumbs-down"></i>
-                                <ins>51</ins> <!-- Dislike Count -->
-                            </span>
-                        </li>
-                        <li>
-                            <span class="comment" title="Comments">
+                            <span class="comment" title="Yorum Yap" data-toggle="tooltip">
                                 <i class="fa fa-commenting"></i>
                                 <ins>52</ins> <!-- Comment Count -->
                             </span>
                         </li>
                         <li>
                             <span>
-                                 <a class="share-pst" href="#" title="Share">
+                                 <a class="share-pst" href="#" title="Paylaş" data-toggle="tooltip">
                                      <i class="fa fa-share-alt"></i>
                                 </a>
                                 <ins>20</ins><!-- Share Count -->
                             </span>
                         </li>
+                        <li>
+                            <span class="bookmark-box mr-3">
+                                <a href="#" title="Kaydet">
+                                    <i class="fa fa-bookmark @if($bookmark == 'active') active @endif"></i>
+                                </a>
+                            </span>
+                        </li>
                     </ul>
                     <div class="users-thumb-list">
                         <!-- if auth user liked then echo "Sen" and display likes count -->
-                        <span><strong>Sen</strong> <b>ve</b> <span class="color-orange">24+ kişi</span>  beğendi</span>
+                        <strong><span class="color-red">Kategori</span></strong>
                     </div>
                 </div>
             </div>
             <div class="coment-area">
                 <ul class="we-comet">
+
                     <!-- Foreach Post Comments -->
+
                     <li>
                         <div class="comet-avatar">
                             <img src="{{ asset('frontend/images/resources/nearly3.jpg') }}" alt="">

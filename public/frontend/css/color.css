@@ -1,9 +1,9 @@
 /*=========================
 	FONT COLOR
 =========================*/
-.product-carousel .owl-nav .owl-prev::before, 
+.product-carousel .owl-nav .owl-prev::before,
 .product-carousel .owl-nav .owl-next::before,
-.product-caro .owl-prev:hover:before, 
+.product-caro .owl-prev:hover:before,
 .product-caro .owl-next:hover:before,
 .log-reg-area form .forgot-pwd,
 .log-reg-area form .already-have,
@@ -35,14 +35,14 @@ a.forgot-pwd,
 .add-btn > a:hover,
 .top-area > ul.main-menu > li > ul li a:hover,
 .dropdowns.active > a i,
-.form-group input.form-file ~ .control-label, 
-.form-group input.has-value ~ .control-label, 
-.form-group input:focus ~ .control-label, 
-.form-group input:valid ~ .control-label, 
-.form-group select ~ .control-label, 
-.form-group textarea.form-file ~ .control-label, 
-.form-group textarea.has-value ~ .control-label, 
-.form-group textarea:focus ~ .control-label, 
+.form-group input.form-file ~ .control-label,
+.form-group input.has-value ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group input:valid ~ .control-label,
+.form-group select ~ .control-label,
+.form-group textarea.form-file ~ .control-label,
+.form-group textarea.has-value ~ .control-label,
+.form-group textarea:focus ~ .control-label,
 .form-group textarea:valid ~ .control-label,
 .flaged > h3,
 .invition .friend-meta a.invite:hover,
@@ -179,7 +179,7 @@ footer .widget .colla-apps > li a:hover,
 .pit-points > i,
 .menu-list > li > a > i,
 .post-up-time > li a,
-.number > span.active i, 
+.number > span.active i,
 .number > input.active,
 .pit-uzr > a:hover,
 .pit-post-deta > h4 > a:hover,
@@ -190,7 +190,7 @@ footer .widget .colla-apps > li a:hover,
 .smilez > li > span,
 .sidebar .comnity-data > ul > li,
 .comnty-avatar > a:hover,
-.usr-fig > a:hover, 
+.usr-fig > a:hover,
 .post-up-time > li .usr-fig > a:hover,
 .feature-title > h2 > a:hover,
 .feature-title > h4 > a:hover,
@@ -269,9 +269,10 @@ span.ttl,
 .total-line > ul li > span > i,
 .extras > a.play-btn:hover,
 .single-btn > li > a,
-.widget .grouppage-info > li
+.widget .grouppage-info > li,
+.friend-name .post-info > ins > a
 {
-	color: #fa6342;	
+	color: #e42a33;
 }
 
 
@@ -305,6 +306,7 @@ a.dislike-btn,
 footer .widget-title h4::before,
 #topcontrol,
 .sidebar .widget-title::before,
+.custom-sidebar .widget .widget-title::before,
 .g-post-classic > figure > i::after,
 .purify > a,
 .open-position::before,
@@ -352,7 +354,7 @@ a.learnmore,
 .search-tab .nav-tabs .nav-item > a.active::after,
 .mh-head,
 .job-tgs > a:hover,
-.owl-prev:hover:before, 
+.owl-prev:hover:before,
 .owl-next:hover:before,
 .help-list > a,
 .title2::before,
@@ -390,11 +392,11 @@ a.date,
 .sugtd-frnd-meta .send-invitation,
 .user-profile .join-btn
 {
-	background: #fa6342;
+	background: #e42a33;
 }
 
 .stroke-solid {
-	fill: #fa6342;
+	fill: #e42a33;
 }
 
 
@@ -424,18 +426,18 @@ a.btn2:hover,
 .qty-select .qty.form-control,
 .extras > a.play-btn
 {
-	border-color: #fa6342;	
+	border-color: #e42a33;
 }
 
 #nprogress .spinner-icon{
-	border-left-color: #fa6342;
+	border-left-color: #e42a33;
 }
 #nprogress .spinner-icon,
 .search-tab .nav-tabs .nav-item > a.active::before
 {
-	border-top-color: #fa6342;		
+	border-top-color: #e42a33;
 }
 .timeline-info > ul li a:after,
 .popup::after{
-	border-bottom-color: #fa6342;
+	border-bottom-color: #e42a33;
 }
