@@ -1,10 +1,11 @@
 <?php namespace App;
 
-use App\Ozelders\Ozelders;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Cmgmyr\Messenger\Traits\Messagable;
+use Illuminate\Support\Facades\Auth;
+
 
 /**
  * Class User
@@ -73,6 +74,34 @@ class User extends Authenticatable
    // Global METODS
    //==================================================================================================================
 
+
+    /***
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Post\Post');
+    }
+
+    public function getFullName()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function friends()
+    {
+        return $this->belongsToMany('App\User', 'friends_users', 'user_id', 'friend_id');
+    }
+
+    public function addFriend(User $user)
+    {
+        $this->friends()->attach($user->id);
+    }
+
+    public function removeFriend(User $user)
+    {
+        $this->friends()->detach($user->id);
+    }
 
    /***
 	* @param $request

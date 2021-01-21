@@ -5,6 +5,7 @@
             <div class="popup-head">
                 <h5>Mesaj Gönder</h5>
             </div>
+            @auth
             <div class="send-message">
                 <form method="post" class="c-form">
                     <input name="username" type="text" disabled>
@@ -12,6 +13,9 @@
                     <button type="submit" class="main-btn">Gönder</button>
                 </form>
             </div>
+            @else
+                Lütfen giriş yapınız
+            @endauth
         </div>
     </div>
 </div><!-- send message popup -->

@@ -128,10 +128,13 @@ Route::get('/', 'Frontend\DashboardController@index')->name('index');
 /**
  * User Routes
  */
-Route::get('/giris', 'Frontend\User\LoginController@index')->name('login');
-Route::post('/login', 'Frontend\User\LoginController@login_process');
-Route::get('/hesabim', 'Frontend\User\MyProfileController@index')->middleware('auth')->name('profile');
-Route::get('/hesabim/duzenle', 'Frontend\User\MyProfileController@edit')->middleware('auth')->name('profileEdit');
+Route::get('giris', 'Frontend\User\LoginController@index')->name('login');
+Route::post('login', 'Frontend\User\LoginController@login_process');
+Route::get('hesabim', 'Frontend\User\MyProfileController@index')->middleware('auth')->name('profile');
+Route::get('hesabim/duzenle', 'Frontend\User\MyProfileController@edit')->middleware('auth')->name('profileEdit');
+Route::get('addFriend/{username}', 'Frontend\User\ProfileController@addFriend')->middleware('auth');
+Route::get('removeFriend/{username}', 'Frontend\User\ProfileController@removeFriend')->middleware('auth');
+Route::get('arkadaslar/', 'Frontend\User\ProfileController@getFriends')->middleware('auth');
 /*
 Route::get('/register', function () {
     $insert = [

@@ -13,8 +13,12 @@
             @if(isset($own) && $own === true)
                 <li><a href="{{ url('hesabim/duzenle') }}" title="Profilimi Düzenle" data-toggle="tooltip"><i class="fa fa-user-edit"></i></a></li>
             @else
-                <li><a href="#" title="Arkadaş Ekle" data-toggle="tooltip"><i class="fa fa-user-plus"></i></a></li>
-                <li><a href="#" title="Takip Et" data-toggle="tooltip"><i class="fas fa-user-tag"></i></a></li>
+                @if($user->isFriend === true)
+                    <li><a href="@if(Auth::check()) {{ url('removeFriend/'.$user->username) }} @else {{ route('login') }} @endif " title="Arkadaşlarımdan Çıkar" data-toggle="tooltip"><i class="fa fa-user-times"></i></a></li>
+                @else
+                    <li><a href="@if(Auth::check()) {{ url('addFriend/'.$user->username) }} @else {{ route('login') }} @endif " title="Arkadaş Ekle" data-toggle="tooltip"><i class="fa fa-user-plus"></i></a></li>
+
+                @endif
                 <li><a class="send-mesg" href="#" title="Mesaj Gönder" data-toggle="tooltip" data-username="alperenakyuz"><i class="fa fa-comment"></i></a></li>
             @endif
         </ul>
@@ -53,18 +57,18 @@
             <div class="col-lg-10 col-md-9">
                 <ul class="profile-menu">
                     <li>
-                        <a class="active" href="timeline.html">Tavsiyeler</a>
+                        <a class="active" href="@if(isset($own) && $own === true) {{ url('hesabim') }} @else {{ url($user->username) }} @endif">Tavsiyeler</a>
                     </li>
                     <li>
-                        <a class="" href="about.html">Yorumlar</a>
+                        <a class="" href="@if(isset($own) && $own === true) {{ url('hesabim/yorumlar') }} @else {{ url($user->username.'/yorumlar') }} @endif">Yorumlar</a>
                     </li>
                     @if(isset($own) && $own === true)
                         <li>
-                            <a class="" href="about.html">Kaydedilenler</a>
+                            <a class="" href="{{ url('hesabim/kaydedilenler') }}">Kaydedilenler</a>
                         </li>
                     @endif
                     <li>
-                        <a class="" href="timeline-friends.html">Hakkında</a>
+                        <a class="" href="@if(isset($own) && $own === true) {{ url('hesabim/hakkimda') }} @else {{ url($user->username.'/hakkimda') }} @endif">Hakkında</a>
                     </li>
                 </ul>
                 <ol class="folw-detail">
