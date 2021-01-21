@@ -9,6 +9,10 @@ class Tavsio
     const POST_ADVICE = 1;
     const POST_COMMENT = 2;
 
+    const HOME_POSTS_TAKE = 20;
+
+    const USER_FOLLOW_APPROVE_REQUIRED = false;
+
 
     static public function getRank($point): string
     {

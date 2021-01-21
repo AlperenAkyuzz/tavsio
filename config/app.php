@@ -177,7 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-
+        Overtrue\LaravelFollow\FollowServiceProvider::class,
         /*
          * Custom Providers
          */

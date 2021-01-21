@@ -13,7 +13,7 @@ class Post extends Model
     /***
      * @var string
      */
-    protected $table = 'posts';
+    protected $table = 'user_posts';
 
     /***
      * @var bool

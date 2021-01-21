@@ -9,6 +9,10 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
+/***
+ * Class ProfileController
+ * @package App\Http\Controllers\Frontend\User
+ */
 class ProfileController extends Controller
 {
     public function index() {
@@ -18,7 +22,8 @@ class ProfileController extends Controller
     public function show($user) {
         $user->rank = Tavsio::getRank($user->points);
         if(Auth::check()) {
-            $user->isFriend = Auth::user()->friends()->exists();
+            //$user->isFriend = Auth::user()->friends()->exists();
+            $user->isFollowing = Auth::user()->isFollowing($user);
         }
         $data = [
             'user' => $user
@@ -31,18 +36,20 @@ class ProfileController extends Controller
 
         //dd(Auth::user()->friends());
         $user = User::where('username', $username)->first();
-        Auth::user()->friends()->attach($user->id);
+        /*Auth::user()->friends()->attach($user->id);*/
+        Auth::user()->follow($user);
         return Redirect::back();
     }
 
     public function removeFriend($username)
     {
         $user = User::where('username', $username)->first();
-        Auth::user()->friends()->detach($user);
+        Auth::user()->unfollow($user);
         return Redirect::back();
     }
 
     public function showFriends() {
         Auth::user()->friends();
     }
+
 }

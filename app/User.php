@@ -1,10 +1,13 @@
 <?php namespace App;
 
+use App\Models\Cms\Post\Post;
+use App\Tavsio\Tavsio;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Cmgmyr\Messenger\Traits\Messagable;
 use Illuminate\Support\Facades\Auth;
+use Overtrue\LaravelFollow\Followable;
 
 
 /**
@@ -16,8 +19,26 @@ class User extends Authenticatable
 {
    use Notifiable;
     use Messagable;
+    use Followable;
 
 
+    /***
+     * User Follow System Functions
+     */
+
+    /**
+     * $user1->follow($user2);
+    $user1->unfollow($user2);
+    $user1->toggleFollow($user2);
+    $user1->acceptFollowRequestFrom($user2);
+    $user1->rejectFollowRequestFrom($user2);
+
+    $user1->isFollowing($user2);
+    $user2->isFollowdBy($user1);
+    $user2->hasRequestedToFollow($user1);
+
+    $user1->areFollowingEachOther($user2);
+     */
    const USER_ADMIN = 1;
    const USER_MODERATOR = 2;
    const USER_USER = 3;
@@ -70,7 +91,15 @@ class User extends Authenticatable
 	  'email_verified_at' => 'datetime',
    ];
 
-   //==================================================================================================================
+    /**
+     * All of the relationships to be touched.
+     *
+     * @var array
+     */
+    protected $touches = ['posts'];
+
+
+    //==================================================================================================================
    // Global METODS
    //==================================================================================================================
 
@@ -80,7 +109,7 @@ class User extends Authenticatable
      */
     public function posts()
     {
-        return $this->hasMany('App\Post\Post');
+        return $this->hasMany(Post::class);
     }
 
     public function getFullName()
@@ -88,19 +117,11 @@ class User extends Authenticatable
         return $this->first_name . ' ' . $this->last_name;
     }
 
-    public function friends()
-    {
-        return $this->belongsToMany('App\User', 'friends_users', 'user_id', 'friend_id');
-    }
-
-    public function addFriend(User $user)
-    {
-        $this->friends()->attach($user->id);
-    }
-
-    public function removeFriend(User $user)
-    {
-        $this->friends()->detach($user->id);
+    public static function unfolloweds($user, int $limit = 20) {
+        $followings = $user->followings->pluck('id');
+        return User::whereNotIn('id', $followings) // exclude already followed
+        ->where('id', '<>', $user->id) // and the user himself
+        ->take($limit)->get();
     }
 
    /***

@@ -149,4 +149,10 @@ Route::get('/register', function () {
     $userInsertId = DB::table('users')->insertGetId($insert);
 });*/
 
+/**
+ * Post Routes
+ */
+Route::get('posts', 'Frontend\Post\PostController@index');
+Route::get('test', 'Frontend\Post\PostController@test');
+
 Route::get('{slug}', 'Frontend\RedirectController@index');

@@ -13,13 +13,13 @@
             @if(isset($own) && $own === true)
                 <li><a href="{{ url('hesabim/duzenle') }}" title="Profilimi Düzenle" data-toggle="tooltip"><i class="fa fa-user-edit"></i></a></li>
             @else
-                @if($user->isFriend === true)
+                @if($user->isFollowing === true)
                     <li><a href="@if(Auth::check()) {{ url('removeFriend/'.$user->username) }} @else {{ route('login') }} @endif " title="Arkadaşlarımdan Çıkar" data-toggle="tooltip"><i class="fa fa-user-times"></i></a></li>
                 @else
                     <li><a href="@if(Auth::check()) {{ url('addFriend/'.$user->username) }} @else {{ route('login') }} @endif " title="Arkadaş Ekle" data-toggle="tooltip"><i class="fa fa-user-plus"></i></a></li>
 
                 @endif
-                <li><a class="send-mesg" href="#" title="Mesaj Gönder" data-toggle="tooltip" data-username="alperenakyuz"><i class="fa fa-comment"></i></a></li>
+                <li><a class="send-mesg" href="#" title="Mesaj Gönder" data-toggle="tooltip" data-username="{{ $user->username }}"><i class="fa fa-comment"></i></a></li>
             @endif
         </ul>
         <ol class="pit-rate">
