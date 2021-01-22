@@ -154,5 +154,6 @@ Route::get('/register', function () {
  */
 Route::get('posts', 'Frontend\Post\PostController@index');
 Route::get('test', 'Frontend\Post\PostController@test');
+Route::post('store', 'Frontend\Post\PostController@store');
 
 Route::get('{slug}', 'Frontend\RedirectController@index');

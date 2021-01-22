@@ -18,8 +18,9 @@
                                     Types: album, video, sponsor, external, map
                                     -->
                                     <!-- foreach posts -->
-                                    @include('frontend.layouts.post.type.sponsor') <!-- Pass data to blade template -->
-                                    @include('frontend.layouts.post.type.video')
+                                    @foreach($posts as $post)
+                                        @include('frontend.layouts.post.type.'.\App\Models\Cms\Post\Post::POST_TYPE[$post->type]) <!-- Pass data to blade template -->
+                                    @endforeach
                                     <!-- endforeach posts -->
                                 </div>
                             </div><!-- content -->

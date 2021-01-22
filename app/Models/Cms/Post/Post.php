@@ -1,7 +1,7 @@
 <?php namespace App\Models\Cms\Post;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Zoha\Metable;
 
 /***
  * Class Post
@@ -9,11 +9,28 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
+    use Metable;
+    const POST_TYPE = [
+        1 => 'album',
+        2 => 'single',
+        3 => 'external',
+        4 => 'map',
+        5 => 'sponsor',
+        6 => 'video'
+    ];
+
+    const POST_TYPE_ALBUM = 1;
+    const POST_TYPE_EXTERNAL = 2;
+    const POST_TYPE_MAP = 3;
+    const POST_TYPE_SPONSOR = 4;
+    const POST_TYPE_VIDEO = 5;
 
     /***
      * @var string
      */
     protected $table = 'user_posts';
+
+
 
     /***
      * @var bool
@@ -33,6 +50,9 @@ class Post extends Model
     protected $casts = [
         'created_at' => 'datetime',
     ];
+    /**
+     * @var int|\Zoha\Meta\Helpers\MetaCollection
+     */
 
     /***
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

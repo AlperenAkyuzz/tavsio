@@ -6,10 +6,12 @@
     $profile_link = "alperenakyuz";
     $post_type = "Tavsiye";
     $post_date = "20 Ocak 2021 Pazartesi 10:50";
+    $bookmark = "false";
+    $notify = "on";
 @endphp
 @section('post-meta')
     <p>
-        !! içerik !!
+        {{ $post->meta->content  }}
     </p>
     <figure>
         <div class="img-bunch">
