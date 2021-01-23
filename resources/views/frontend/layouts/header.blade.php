@@ -1,6 +1,6 @@
 <div class="topbar transparent stick">
     <div class="logo">
-        <a title="" href="newsfeed.html"><img src="{{ asset('frontend/images/logo_main.png') }}" alt="Tavsio Logo" width="120px;"></a>
+        <a title="" href="{{ route('index') }}"><img src="{{ asset('frontend/images/logo_main.png') }}" alt="Tavsio Logo" width="120px;"></a>
         <!--<a class="menu-small blue-bg" href="#" title="">
             <i class="fa fa-bars fa-2x ml-4"></i>
         </a>-->
@@ -47,17 +47,21 @@
             <span><a href="{{ url('forum') }}"><i class="fa fa-lightbulb-o"></i> Tavsiye İste</a></span>
         </div>
         <div class="user-img">
-            <h5>Auth User</h5>
-            <img src="{{ asset('frontend/images/resources/admin.jpg') }}" alt="">
-            <span class="status f-online"></span>
-            <div class="user-setting">
-                <ul class="log-out">
-                    <li><a href="about.html" title=""><i class="ti-user"></i> Profili görüntüle</a></li>
-                    <li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>Profili düzenle</a></li>
-                    <li><a href="setting.html" title=""><i class="ti-settings"></i>Hesap ayarları</a></li>
-                    <li><a href="logout.html" title=""><i class="ti-power-off"></i>Çıkış yap</a></li>
-                </ul>
-            </div>
+            @if(Auth::check())
+                <h5>{{ Auth::user()->username }}</h5>
+                <img src="{{ asset('uploads/profiles/'.Auth::user()->username) }}" alt="">
+                <span class="status f-online"></span>
+                <div class="user-setting">
+                    <ul class="log-out">
+                        <li><a href="{{ url('hesabim') }}" title=""><i class="ti-user"></i> Profili görüntüle</a></li>
+                        <li><a href="{{ url('hesabim/duzenle') }}" title=""><i class="ti-pencil-alt"></i>Profili düzenle</a></li>
+                        <li><a href="{{ url('hesabim/ayarlar') }}" title=""><i class="ti-settings"></i>Hesap ayarları</a></li>
+                        <li><a href="{{ route('logout') }}" title=""><i class="ti-power-off"></i>Çıkış yap</a></li>
+                    </ul>
+                </div>
+            @else
+                <h5><a href="{{ route('login') }}">Oturum Aç</a></h5>
+            @endif
         </div>
     </div>
     <nav>

@@ -14,9 +14,9 @@
                 <li><a href="{{ url('hesabim/duzenle') }}" title="Profilimi Düzenle" data-toggle="tooltip"><i class="fa fa-user-edit"></i></a></li>
             @else
                 @if($user->isFollowing === true)
-                    <li><a href="@if(Auth::check()) {{ url('removeFriend/'.$user->username) }} @else {{ route('login') }} @endif " title="Arkadaşlarımdan Çıkar" data-toggle="tooltip"><i class="fa fa-user-times"></i></a></li>
+                    <li><a href="@if(Auth::check()) {{ url('unFollow/'.$user->username) }} @else {{ route('login') }} @endif " title="Takibi Bırak" data-toggle="tooltip"><i class="fa fa-user-times"></i></a></li>
                 @else
-                    <li><a href="@if(Auth::check()) {{ url('addFriend/'.$user->username) }} @else {{ route('login') }} @endif " title="Arkadaş Ekle" data-toggle="tooltip"><i class="fa fa-user-plus"></i></a></li>
+                    <li><a href="@if(Auth::check()) {{ url('addFollow/'.$user->username) }} @else {{ route('login') }} @endif " title="Takip Et" data-toggle="tooltip"><i class="fa fa-user-plus"></i></a></li>
 
                 @endif
                 <li><a class="send-mesg" href="#" title="Mesaj Gönder" data-toggle="tooltip" data-username="{{ $user->username }}"><i class="fa fa-comment"></i></a></li>
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="author-content">
-                        <a class="h4 author-name" href="about.html">{{ $user->firstname }} {{ $user->lastname }}</a>
+                        <a class="h4 author-name" href="@if(isset($own) && $own === true) {{ url('hesabim') }} @else {{ url($user->username) }} @endif">{{ $user->firstname }} {{ $user->lastname }}</a>
                         <div class="user-rank">{{ $user->rank }}</div>
                     </div>
                 </div>
@@ -72,9 +72,9 @@
                     </li>
                 </ul>
                 <ol class="folw-detail">
-                    <li><span>Posts</span><ins>101</ins></li>
-                    <li><span>Followers</span><ins>1.3K</ins></li>
-                    <li><span>Following</span><ins>22</ins></li>
+                    <li><span>Paylaşım</span><ins>{{ $user->posts->count() }}</ins></li>
+                    <li><span>Takipçi</span><ins>{{ $user->followers->count() }}</ins></li>
+                    <li><span>Takip</span><ins>{{ $user->followings->count() }}</ins></li>
                 </ol>
             </div>
         </div>

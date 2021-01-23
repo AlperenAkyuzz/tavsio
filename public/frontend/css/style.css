@@ -8646,8 +8646,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     width: 100%;
 }
 .error-meta > div {
-    display: table-cell;
-    vertical-align: middle;
+    /*display: table-cell;
+    vertical-align: middle;*/
 }
 .error-meta h1 {
     color: #fff;
@@ -9744,7 +9744,7 @@ svg #shadow_1_ {
 
 .robo-image {
     display: table;
-    height: 85vh;
+    /*height: 85vh;*/
     width: 100%;
 }
 .v-center {
@@ -18903,6 +18903,13 @@ table.adition tbody tr td {
 
     .friend-info > figure {
         width: 32px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .robo-image {
+        width: 50%;
+        margin: auto;
     }
 }
 

@@ -130,10 +130,12 @@ Route::get('/', 'Frontend\DashboardController@index')->name('index');
  */
 Route::get('giris', 'Frontend\User\LoginController@index')->name('login');
 Route::post('login', 'Frontend\User\LoginController@login_process');
+Route::get('cikis', 'Frontend\User\LoginController@logout')->name('logout');
+
 Route::get('hesabim', 'Frontend\User\MyProfileController@index')->middleware('auth')->name('profile');
 Route::get('hesabim/duzenle', 'Frontend\User\MyProfileController@edit')->middleware('auth')->name('profileEdit');
-Route::get('addFriend/{username}', 'Frontend\User\ProfileController@addFriend')->middleware('auth');
-Route::get('removeFriend/{username}', 'Frontend\User\ProfileController@removeFriend')->middleware('auth');
+Route::get('addFollow/{username}', 'Frontend\User\ProfileController@addFollow')->middleware('auth');
+Route::get('unFollow/{username}', 'Frontend\User\ProfileController@unFollow')->middleware('auth');
 Route::get('arkadaslar/', 'Frontend\User\ProfileController@getFriends')->middleware('auth');
 /*
 Route::get('/register', function () {

@@ -22,6 +22,6 @@ class RedirectController extends Controller
             return $controller->show($checkProfile);
         }
 
-        return '404';
+        return view('frontend.errors.404');
     }
 }

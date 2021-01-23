@@ -60,6 +60,7 @@ class PostController extends Controller
             $post->type = 0;
             $post->user_id = Auth::id();
             $post->title = 'Test';
+            $post->category_id = 1;
             // Save post for retrieve meta owner id
             $post->save();
             $content = 'asdasdas';

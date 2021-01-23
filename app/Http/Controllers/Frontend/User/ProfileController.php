@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Frontend\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cms\Post\Post;
 use App\Tavsio\Tavsio;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -21,17 +22,25 @@ class ProfileController extends Controller
 
     public function show($user) {
         $user->rank = Tavsio::getRank($user->points);
+        $user->isFollowing = false;
         if(Auth::check()) {
             //$user->isFriend = Auth::user()->friends()->exists();
             $user->isFollowing = Auth::user()->isFollowing($user);
         }
+
+        $posts = Post::where('status', 1)
+            ->orderBy('id', 'DESC')
+            ->where('user_id', $user->id)
+            ->get();
+
         $data = [
-            'user' => $user
+            'user' => $user,
+            'posts' => $posts
         ];
         return view('frontend.user.profile', $data);
     }
 
-    public function addFriend($username)
+    public function addFollow($username)
     {
 
         //dd(Auth::user()->friends());
@@ -41,7 +50,7 @@ class ProfileController extends Controller
         return Redirect::back();
     }
 
-    public function removeFriend($username)
+    public function unFollow($username)
     {
         $user = User::where('username', $username)->first();
         Auth::user()->unfollow($user);

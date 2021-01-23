@@ -7,8 +7,8 @@
             <div class="friend-name">
                 <div class="row">
                     <div class="col-lg-6 col-xs-12 post-info">
-                        <ins><a href="{{ $profile_link }}" title="">{{ $author }}</a><span class="post-type advice-brush"> {{ $post_type }}</span></ins>
-                        <span class="post-date"><a href="detay"><i class="fa fa-globe"></i> {{ $post_date }}</a> </span>
+                        <ins><a href="{{ url($post->user->username) }}" title="">{{ $post->user->username }}</a><span class="post-type advice-brush"> {{ \App\Models\Cms\Post\Post::POST_TYPE[$post->type] }}</span></ins>
+                        <span class="post-date"><a href="{{ url('detay/'.$post->slug) }}"><i class="fa fa-globe"></i> {{ $post->created_at }}</a> </span>
                     </div>
                     <div class="col-lg-6 col-xs-12">
                         <div class="more">
@@ -27,22 +27,19 @@
                                 <span class="label label-default">New</span></h1>
                             <div class="more-post-optns"><i class="fa fa-ellipsis-h"></i>
                                 <ul>
-                                    {{--
-                                    @if(Auth::id() === $post->user_id)
+
+                                    @if(Auth::id() === $post->user->id)
                                         <li><i class="fa fa-pencil-square-o"></i>Düzenle</li>
-                                        <li><i class="fa fa-trash-o"></i>Sil</li>
-                                    @endif --}}
-                                    <li><i class="fa fa-pencil-square-o"></i>Düzenle</li>
-                                    <li><i class="fa fa-trash-o"></i>Sil</li>
-                                    {{--
-                                    @if(Auth::id() !== $post->user_id)
+                                        <li><i class="fa fa-trash"></i>Sil</li>
+                                    @endif
+
+                                    @if(Auth::id() !== $post->user->id)
                                         <li class="bad-report"><i class="fa fa-flag"></i>Kötüye Kullanım Bildir</li>
-                                    @endif --}}
-                                    <li class="bad-report"><i class="fa fa-flag"></i>Kötüye Kullanım Bildir</li>
+                                    @endif
                                     @if($notify == 'on')
-                                        <li><i class="fa fa-bell-slash-o"></i>Bildirimleri Kapat</li>
+                                        <li><i class="fa fa-bell-slash"></i>Bildirimleri Kapat</li>
                                     @else
-                                        <li><i class="fa fa-bell-o"></i>Bildirimleri Aç</li>
+                                        <li><i class="fa fa-bell"></i>Bildirimleri Aç</li>
                                     @endif
                                 </ul>
                             </div>
@@ -99,25 +96,27 @@
                 <ul class="we-comet">
 
                     <!-- Foreach Post Comments -->
-
-                    <li>
-                        <div class="comet-avatar">
-                            <img src="{{ asset('frontend/images/resources/nearly3.jpg') }}" alt="">
-                        </div>
-                        <div class="we-comment">
-                            <h5><a href="time-line.html" title="">!! username !!</a></h5>
-                            <p>!! content !!</p>
-                            <div class="inline-itms">
-                                <span>!! date !!</span>
-                                <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
-                                <!-- Reply butonuna tıklandığında jQuery ile data username'i al ve commentbox'a @ işareti ile birlikte kullanıcı adını ekle. -->
-                                <a href="#" data-username="username" title="!!username!! kullanıcısına cevap ver"><i class="fa fa-heart"></i><span>20</span></a>
+                    @foreach($post->comments as $comment)
+                        <li>
+                            <div class="comet-avatar">
+                                <img src="{{ asset('uploads/profiles/'.$comment->user->username) }}" alt="">
                             </div>
-                        </div>
-                    </li>
+                            <div class="we-comment">
+                                <h5><a href="{{ url($comment->user->username) }}" title="">{{ $comment->user->username }}</a></h5>
+                                <p>{{ $comment->comment }}</p>
+                                <div class="inline-itms">
+                                    <span>{{ $comment->created_at}}</span>
+                                    <a class="we-reply" href="#" title="Cevapla" data-username="{{ $comment->user->username }}"><i class="fa fa-reply"></i></a>
+                                    <!-- Reply butonuna tıklandığında jQuery ile data username'i al ve commentbox'a @ işareti ile birlikte kullanıcı adını ekle. -->
+                                    <a href="#" data-username="{{ $comment->user->username }}" title="{{ $comment->user->username }} yorumunu beğen"><i class="fa fa-heart"></i><span>20</span></a>
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
+
                     <!-- Endforeach Post Comments -->
                     <li>
-                        <a href="/post/detay" title="" class="showmore underline">daha fazlası+</a>
+                        <a href="detay/{{ $post->slug }}" title="" class="showmore underline">daha fazlası+</a>
                     </li>
                     <li class="post-comment">
                         <div class="comet-avatar">

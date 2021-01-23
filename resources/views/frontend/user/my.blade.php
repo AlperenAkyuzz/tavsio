@@ -13,9 +13,15 @@
                             @include('frontend.layouts.user.profile.banner', [$own = true])
 
                             <div class="col-lg-9 col-xs-12">
-                                <div class="loadMore">
-                                    @include('frontend.layouts.post.type.sponsor')
-                                </div>
+                                @if(count($posts))
+                                    <div class="loadMore">
+                                    @foreach($posts as $post)
+                                        @include('frontend.layouts.post.type.'.\App\Models\Cms\Post\Post::POST_TYPE[$post->type]) <!-- Pass data to blade template -->
+                                        @endforeach
+                                    </div>
+                                @else
+                                    <h5>Henüz bir şey paylaşılmamış</h5>
+                                @endif
                             </div><!-- posts end -->
                             <div class="col-lg-3">
                                 <aside class="sidebar static right">

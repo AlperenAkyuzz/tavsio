@@ -1,25 +1,14 @@
 <?php namespace App\Models\Cms\Post;
 
-use App\Models\Cms\Pages\PostCategory;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
-use Zoha\Metable;
 
 /***
- * Class Post
+ * Class PostComment
  * @package App\Models\Cms\Post
  */
-class Post extends Model
+class PostComment extends Model
 {
-    use Metable;
-    const POST_TYPE = [
-        1 => 'album',
-        2 => 'single',
-        3 => 'external',
-        4 => 'map',
-        5 => 'sponsor',
-        6 => 'video'
-    ];
-
     const POST_TYPE_ALBUM = 1;
     const POST_TYPE_EXTERNAL = 2;
     const POST_TYPE_MAP = 3;
@@ -29,7 +18,7 @@ class Post extends Model
     /***
      * @var string
      */
-    protected $table = 'user_posts';
+    protected $table = 'post_comments';
 
 
 
@@ -58,23 +47,17 @@ class Post extends Model
     /***
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
+
+    /***
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
-        return $this->belongsTo('App\User');
-    }
-
-
-    public function category()
-    {
-        return $this->belongsTo(PostCategory::class);
-    }
-
-    /**
-     * Get the comments for the post.
-     */
-    public function comments()
-    {
-        return $this->hasMany(PostComment::class);
+        return $this->belongsTo(User::class, 'author_id');
     }
 
     public function likes()

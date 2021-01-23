@@ -39,18 +39,4 @@ class USerRank extends Model
         'created_at' => 'datetime',
     ];
 
-    /***
-     * @param $userId
-     * @param string $content
-     * @param int $level
-     * @return mixed
-     */
-    public static function userAddLog(int $userId, string $content, int $level = UserLogs::LOG_LEVEL_ERROR){
-        return UserLogs::create([
-            'user_id'    => $userId,
-            'level'      => $level,
-            'content'    => $content,
-            'created_at' => date('Y-m-d H:i:s'),
-        ]);
-    }
 }
